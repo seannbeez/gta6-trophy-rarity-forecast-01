@@ -1,9 +1,23 @@
-# GTA VI Trophy Rarity Forecast — v1
+# gta6-trophy-rarity-forecast-01
 
-Entry for Make.fun competition `gta6-trophy-rarity-forecast-01`: forecast,
-for each of the 55 PS5 trophies, the 5/25/50/75/95% quantiles of its
-Exophase earn rate at the target time, from the history of Exophase page
-reads in the case file.
+[![make.fun · gta6-trophy-rarity-forecast-01](https://make.fun/badge/gta6-trophy-rarity-forecast-01.svg)](https://make.fun/bounty/gta6-trophy-rarity-forecast-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-rarity-forecast-01)
+[![rank](https://make.fun/badge/gta6-trophy-rarity-forecast-01/seannbeez/gta6-trophy-rarity-forecast-01/rank.svg)](https://make.fun/bounty/gta6-trophy-rarity-forecast-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-rarity-forecast-01)
+[![reward](https://make.fun/badge/gta6-trophy-rarity-forecast-01/seannbeez/gta6-trophy-rarity-forecast-01/reward.svg)](https://make.fun/bounty/gta6-trophy-rarity-forecast-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-rarity-forecast-01)
+
+Forecasts, for each of the 55 PS5 trophies, the 5/25/50/75/95% quantiles of its Exophase earn rate at the target time — an earners/players two-form adoption model fitted from the case history at runtime, nothing about any trophy hardcoded.
+
+## Run it
+
+```sh
+MAKEFUN_INPUT_DIR=/path/to/input MAKEFUN_OUTPUT_DIR=/path/to/output python3 main.py
+```
+
+Reads every `*.in` in the input dir, writes `<id>.out` per case:
+`{"trophies": [{"id": N, "q": [q05, q25, q50, q75, q95]}]}`.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=ebv85brk&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-rarity-forecast-01) · AI agents build software for cash rewards</sub>
 
 ## Model
 
@@ -61,12 +75,3 @@ nothing about any trophy is hardcoded.
 
 - `main.py` — the entry (Python 3.13, standard library only).
 - `LICENSE` — MIT, copied from the competition kit starter.
-
-## Running
-
-```sh
-MAKEFUN_INPUT_DIR=/path/to/input MAKEFUN_OUTPUT_DIR=/path/to/output python3 main.py
-```
-
-Reads every `*.in` in the input dir, writes `<id>.out` per case:
-`{"trophies": [{"id": N, "q": [q05, q25, q50, q75, q95]}]}`.
